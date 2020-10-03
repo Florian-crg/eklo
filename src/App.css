@@ -1,38 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Kufam&display=swap');
+
+:root {
+  --color-near-black: #011826;
+  --color-deep-blue: rgba(5, 57, 89, 1);
+  --color-yellow: #f2cf63;
+  --color-white: #ffffff;
+  --color-renature: #7860ed;
+  --color-magenta: #d93b75;
+  --color-orange: #f29441;
+}
+
 .App {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.space {
+  height: 200vh;
+  width: 100%;
+  background: linear-gradient(var(--color-near-black), var(--color-deep-blue));
+  /* background: linear-gradient(180deg, var(--color-near-black) 0%, var(--color-deep-blue) 98%, rgba(255,255,255, 1) 100%); */
+
+}
+
+.sun {
+  background: linear-gradient(90deg, rgba(244, 117, 64, 1) 0%, rgba(242, 207, 99, 1) 35%, rgba(242, 208, 99, 1) 100%);
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  box-shadow: 0 0 30px 5px var(--color-yellow);
+  position: relative;
+  transform: translate(-50%, -50%);
+}
+
+.planetOne {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background: var(--color-white);
+  box-shadow: 0 0 10px 2px var(--color-renature), 0 0 16px 8px var(--color-renature);
+}
+
+.planetTwo {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: var(--color-white);
+  box-shadow: 0 0 8px 4px var(--color-orange), 0 0 16px 8px var(--color-orange);
+}
+
+.planetThree {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background: var(--color-white);
+  box-shadow: 0 0 8px 4px var(--color-magenta),
+    0 0 16px 8px var(--color-magenta);
+}
+
+
+h1 {
+  color: white;
+  font-family: 'Kufam', cursive;
+  font-size: 8rem;
+  position: absolute;
+  bottom: -7vh;
+  left: 6vw;
+  letter-spacing: 7px;
+}
+
+.particles {
+  height: 100vh;
+  width: 100%;
+  margin: auto;
+  position: absolute;
+}
+
+@keyframes move_wave {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1)
+  }
+
+  50% {
+    transform: translateX(-25%) translateZ(0) scaleY(0.55)
+  }
+
+  100% {
+    transform: translateX(-50%) translateZ(0) scaleY(1)
+  }
+}
+
+
+
+#animation {
+ position: absolute;
+ bottom: -100vh;
+ height: 20vh;
+ margin: 0 auto;
+ left: 0;
+ right: 0;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+@keyframes showTopText {
+  0% { transform: translate3d(0, 100%, 0); }
+  40%, 60% { transform: translate3d(0, 50%, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+@keyframes showBottomText {
+  0% { transform: translate3d(0, -100%, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+.opacity {
+  opacity: 0 !important;
+}
+.opacity > div{
+  width: 0%;
+}
+
+.animated-title {
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
+  color: #fff;
+  font-family: Roboto, Arial, sans-serif;
+  height: 90vmin;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vmin;
+  z-index: 1;
+  background: #011826;
+  width: 100%;
+  height: 100vh;
+  
+}
+.animated-title > div {
+  height: 50%;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  padding: 0 100px;
+}
+.animated-title > div div {
+  font-size: 12vmin;
+  padding: 2vmin 0;
+  position: absolute;
+}
+.animated-title > div div span {
+  display: block;
+}
+.animated-title > div.text-top {
+  border-bottom: 1vmin solid #fff;
+  top: 0;
+}
+.animated-title > div.text-top div {
+  animation: showTopText 1s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  bottom: 0;
+  transform: translate(0, 100%);
+}
+.animated-title > div.text-top div span:first-child {
+  color: #fff;
+}
+.animated-title > div.text-bottom {
+  bottom: 0;
+}
+.animated-title > div.text-bottom div {
+  animation: showBottomText 0.5s;
+  animation-delay: 1.75s;
+  animation-fill-mode: forwards;
+  top: 0;
+  transform: translate(0, -100%);
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:300|Oswald);
+.wordContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.wordCarousel {
+  font-size: 36px;
+  font-weight: 100;
+  color: #939393;
+  position: absolute;
+  bottom: -70vh;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.wordCarousel div {
+  overflow: hidden;
+  position: relative;
+  float: right;
+  height: 65px;
+  padding-top: 10px;
+  margin-top: -10px;
+}
+.wordCarousel div li {
+  font-family: Serif;
+  color: #ccc;
+  font-weight: 700;
+  height: 45px;
+  margin-bottom: 45px;
+  display: block;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.flip2 {
+  animation: flip2 6s cubic-bezier(0.23, 1, 0.32, 1.2) infinite;
+}
+
+.flip3 {
+  animation: flip3 8s cubic-bezier(0.23, 1, 0.32, 1.2) infinite;
+}
+
+.flip4 {
+  animation: flip4 10s cubic-bezier(0.23, 1, 0.32, 1.2) infinite;
+  padding: 0 10px;
+}
+
+@keyframes flip2 {
+  0% {
+    margin-top: -180px;
+  }
+  5% {
+    margin-top: -90px;
+  }
+  50% {
+    margin-top: -90px;
+  }
+  55% {
+    margin-top: 0px;
+  }
+  99.99% {
+    margin-top: 0px;
+  }
+  100% {
+    margin-top: -270px;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes flip3 {
+  0% {
+    margin-top: -270px;
   }
-  to {
-    transform: rotate(360deg);
+  5% {
+    margin-top: -180px;
+  }
+  33% {
+    margin-top: -180px;
+  }
+  38% {
+    margin-top: -90px;
+  }
+  66% {
+    margin-top: -90px;
+  }
+  71% {
+    margin-top: 0px;
+  }
+  99.99% {
+    margin-top: 0px;
+  }
+  100% {
+    margin-top: -270px;
+  }
+}
+@keyframes flip4 {
+  0% {
+    margin-top: -360px;
+  }
+  5% {
+    margin-top: -270px;
+  }
+  25% {
+    margin-top: -270px;
+  }
+  30% {
+    margin-top: -180px;
+  }
+  50% {
+    margin-top: -180px;
+  }
+  55% {
+    margin-top: -90px;
+  }
+  75% {
+    margin-top: -90px;
+  }
+  80% {
+    margin-top: 0px;
+  }
+  99.99% {
+    margin-top: 0px;
+  }
+  100% {
+    margin-top: -270px;
   }
 }
